@@ -1,18 +1,20 @@
 import React from 'react';
 import axios from 'axios';
 import { Table } from 'semantic-ui-react'
+import config from '../config/config.json';
 class Register extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
       register: [],
-      postings: []
+      postings: [],
+      temp:null
     }
   }
 
   componentDidMount() {
-    axios.get('http://172.24.177.135:3001/register')
+    axios.get(config.config.register)
     .then(res => {
     this.setState({ register: res.data })
       })
@@ -62,11 +64,33 @@ return result
       )
     })
   }
+  changeContents=()=>{
+    
+    if(this.state.temp==null)
+    {
+    var config='http://172.24.177.135:3001/register/test'
+    this.setState({temp:1})
+  }
+  else{
+    var config='http://172.24.177.135:3001/register/file'
+    this.setState({temp:null})
+  }
+    axios.get(config)
+      .then(res => {
+        console.log(res);
+        var length=res.data.length;
+        
+        this.setState({ register: res.data })
+      })
+      
+  }
+  
 
   render() {
     return (
       <div>
         <h3 align="center">Ledger-cli - Register</h3>
+        <button onClick={this.changeContents}>Change DAT file</button>
         <Table celled>
           <Table.Header>
             <Table.Row>

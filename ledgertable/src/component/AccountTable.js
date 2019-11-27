@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
+import config from '../config/config.json';
 class Account extends React.Component {
     constructor(props) {
         super(props)
@@ -10,7 +10,7 @@ class Account extends React.Component {
     }
 
 componentDidMount() {
-        axios.get('http://172.24.177.135:3001/account')
+        axios.get(config.config.account)
         .then(res => {
          this.setState({ account: res.data })
             })
@@ -27,6 +27,7 @@ renderTableData() {
     }
     
 render() {
+
 return (
             <div>
                 <h3>Ledger-cli - Accounts</h3>

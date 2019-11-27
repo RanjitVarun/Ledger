@@ -1,0 +1,10 @@
+{
+    "config":{
+        "account":"http://172.24.177.135:3001/account",
+        "balance":"http://172.24.177.135:3001/balance/file",
+        "register":"http://172.24.177.135:3001/register/file",
+        "form":"http://172.24.177.135:3001/form",
+        "report":"http://172.24.177.135:3001/report",
+        "comments":"http://172.24.177.135:3001/comments"
+    }
+}

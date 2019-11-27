@@ -32,13 +32,17 @@
   Expenses:Escrow                   $  300.00
   Assets:Checking                  $ -1000.00
 
-2011/01/02 Grocery Store
+2011/01/02 1573538471240) Grocery Store
   Expenses:Food:Groceries             $ 65.00
   Assets:Checking
 
 2011/01/05 Employer
   Assets:Checking                   $ 2000.00
   Income:Salary
+
+2011/01/05 Employees
+  Assets:Checking                   $ 2.00
+  Income:bonus
 
 2011/01/14 Bank
   ; Regular monthly savings transfer
@@ -69,5 +73,6 @@ end tag
   Assets:Checking:Business            $ 30.00
   Income:Sales
 end tag
+
 
 
